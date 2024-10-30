@@ -1,11 +1,10 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { RedisIoAdapter } from './adapter/adapter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-   // Enable CORS
+ 
    app.enableCors({
     origin: "*",
     methods: ['GET', 'POST'], 
